@@ -6,6 +6,12 @@
     <title>Giulio Seccia - Professor and Chair, Department of Economics</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Prefetch other pages for faster navigation -->
+    <link rel="prefetch" href="published_papers.html">
+    <link rel="prefetch" href="work_in_progress.html">
+    <link rel="prefetch" href="teaching.html">
+    <link rel="prefetch" href="CV-Seccia.pdf">
 </head>
 <body>
     <header>
@@ -133,5 +139,27 @@
             <p>&copy; 2025 Giulio Seccia. Last updated: July 2025</p>
         </div>
     </footer>
+
+    <script>
+        // Hover-based preloading for faster navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link[href$=".html"]');
+            const preloadedPages = new Set();
+            
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    const href = this.getAttribute('href');
+                    if (href && !preloadedPages.has(href) && href.endsWith('.html')) {
+                        // Create invisible link for instant preload
+                        const preloadLink = document.createElement('link');
+                        preloadLink.rel = 'prefetch';
+                        preloadLink.href = href;
+                        document.head.appendChild(preloadLink);
+                        preloadedPages.add(href);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
