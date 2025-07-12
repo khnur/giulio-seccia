@@ -1,0 +1,597 @@
+/* Modern CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #2c3e50;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #6c757d;
+    --white: #ffffff;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography improvements */
+p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+
+/* Improved text selection */
+::selection {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+::-moz-selection {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Navigation */
+header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.nav-title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.nav-title a:hover {
+    color: var(--accent-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/* Main Content */
+.main-content {
+    padding: 3rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Hero Section with Profile */
+.hero-section {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color) 0%, #2980b9 100%);
+}
+
+.profile-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.profile-name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.profile-title {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.profile-title p {
+    margin-bottom: 1rem;
+}
+
+.profile-title strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.contact-info {
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--medium-gray) 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 6px solid var(--accent-color);
+    margin-top: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+}
+
+.contact-info strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow-hover);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.03);
+}
+
+/* Content Sections */
+.content-section {
+    display: grid;
+    gap: 3rem;
+}
+
+.section-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--accent-color);
+    line-height: 1.3;
+}
+
+.subsection-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+    line-height: 1.4;
+}
+
+.subsection-title:first-of-type {
+    margin-top: 0;
+}
+
+/* Appointments */
+.appointments-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.appointment-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #f1f3f4 100%);
+    border-radius: 12px;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.appointment-item:hover {
+    transform: translateY(-2px);
+}
+
+.appointment-years {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    border: 2px solid var(--accent-color);
+}
+
+.appointment-position {
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+/* Visiting Positions */
+.visiting-positions p {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #f1f3f4 100%);
+    border-radius: 12px;
+    border-left: 6px solid var(--accent-color);
+    line-height: 1.8;
+    transition: transform 0.2s ease;
+}
+
+.visiting-positions p:hover {
+    transform: translateY(-2px);
+}
+
+.visiting-positions strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.position-detail {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Education */
+.education-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.education-item {
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #f1f3f4 100%);
+    border-radius: 12px;
+    border-left: 6px solid var(--accent-color);
+    transition: transform 0.2s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-2px);
+}
+
+.education-item strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.education-detail {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: block;
+}
+
+/* Specialization Areas */
+.specialization-areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.specialization-tag {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #2980b9 100%);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.specialization-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Publications Styles */
+.publication-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.publication-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.publication-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.publication-title a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.publication-details {
+    font-style: italic;
+    color: var(--dark-gray);
+}
+
+.publication-authors {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+/* Teaching Page Styles */
+.teaching-overview {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.teaching-areas {
+    margin-bottom: 2rem;
+}
+
+.teaching-philosophy {
+    margin-bottom: 2rem;
+}
+
+.course-info {
+    margin-bottom: 2rem;
+}
+
+.teaching-philosophy p,
+.course-info p {
+    padding: 1rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .profile-header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .profile-photo {
+        order: -1;
+    }
+    
+    .profile-name {
+        font-size: 2.5rem;
+    }
+    
+    .appointment-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .appointment-years {
+        font-size: 0.8rem;
+    }
+    
+    .section-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .profile-name {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .subsection-title {
+        font-size: 1.2rem;
+    }
+    
+    .specialization-areas {
+        flex-direction: column;
+    }
+    
+    .nav-menu {
+        gap: 0.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    header {
+        position: static;
+        box-shadow: none;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .section-card {
+        box-shadow: none;
+        border: 1px solid var(--medium-gray);
+    }
+    
+    .profile-image {
+        max-width: 200px;
+    }
+} 
+
+/* Add focus states for better accessibility */
+.nav-link:focus,
+.contact-info a:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Better content spacing */
+.section-card + .section-card {
+    margin-top: 3rem;
+}
+
+/* Improved readability for smaller screens */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 2rem 0;
+    }
+    
+    .hero-section {
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .section-card {
+        padding: 2rem;
+    }
+    
+    .profile-name {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+} 

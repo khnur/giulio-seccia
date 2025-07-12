@@ -1,0 +1,31 @@
+{
+  "name": "giulio-seccia-website",
+  "version": "1.0.0",
+  "description": "Personal academic website for Professor Giulio Seccia, Chair of the Department of Economics at Nazarbayev University",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "preview": "python3 -m http.server 8000",
+    "build": "echo 'This is a static website, no build step required'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "academic",
+    "economics",
+    "professor",
+    "nazarbayev-university",
+    "website",
+    "portfolio"
+  ],
+  "author": "Giulio Seccia",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/giulio-seccia-website.git"
+  },
+  "homepage": "https://giulio-seccia-website.vercel.app",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {}
+} 
