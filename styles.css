@@ -87,6 +87,11 @@ header {
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--primary-color);
+    margin: 0;
+    line-height: 1.2;
+    height: 40px; /* Explicit height to match nav-links */
+    display: flex;
+    align-items: center;
 }
 
 .nav-title a {
@@ -112,6 +117,10 @@ header {
     padding: 0.5rem 1rem;
     border-radius: 6px;
     transition: all 0.3s ease;
+    height: 40px; /* Match nav-title height */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .nav-link:hover,
