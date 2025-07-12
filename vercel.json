@@ -3,6 +3,7 @@
   "name": "giulio-seccia-website",
   "cleanUrls": true,
   "trailingSlash": false,
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/(.*)",
